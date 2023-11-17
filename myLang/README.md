@@ -19,17 +19,17 @@ This will get compiled to javascript
 
 - IdentifierToken(String)  
 - NumberToken(int)  
-- IntToken  
-- BoolToken  
-- LeftParenToken  
-- RightParenToken  
-- VardecToken  
-- TrueToken  
-- FalseToken  
-- WhileToken  
-- SingleEqualsToken  
-- PlusToken  
-- MinusToken  
-- LogicalAndToken  
-- LogicalOrToken  
-- LessThanToken  
+- IntToken  (Hashcode: 0)
+- BoolToken  1
+- LeftParenToken  2
+- VardecToken  3
+- RightParenToken  4
+- TrueToken  5
+- FalseToken  6
+- WhileToken  7
+- SingleEqualsToken  8
+- PlusToken  9
+- MinusToken  10
+- LogicalAndToken  11
+- LogicalOrToken  12
+- LessThanToken  13
