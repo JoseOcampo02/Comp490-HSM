@@ -33,3 +33,25 @@ This will get compiled to javascript
 - LogicalAndToken  11
 - LogicalOrToken  12
 - LessThanToken  13
+
+# AST Definition #
+
+interface Type  
+- class IntType: (hashcode 0)
+- class BoolType: (hashcode only for node that dont have children)  
+interface Exp  
+- class NumberLiteralExp
+- class BooleanLiteralExp
+- class VariableExp
+- class OpExp
+interface Stmt  
+- class VardecStmt
+- class LoopStmt
+- class AssignStmt
+interface Op  
+- class PlusOp: 2
+- class MinusOp: 3
+- class LogicalAndOp: 4
+- class LogicalOrOp: 5
+- class LessThanOp: 6
+class Program 
