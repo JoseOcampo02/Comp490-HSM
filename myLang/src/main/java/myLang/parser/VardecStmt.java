@@ -38,7 +38,7 @@ public class VardecStmt implements Stmt{
         return ("VardecStmt(" +
                 type.toString() + ", " +
                 variable.toString() + ", " +
-                exp.toString() + ")";
+                exp.toString() + ")");
     }
 
 }

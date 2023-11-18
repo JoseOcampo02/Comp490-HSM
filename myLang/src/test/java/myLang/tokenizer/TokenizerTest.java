@@ -106,4 +106,40 @@ public class TokenizerTest {
         Tokenizer.tokenize("(* 3 4)");
     }
     
+    // (vardec int x 0)
+    // (while (< x 10)
+    //     (= x (+ x 1))
+    // )
+    
+    @Test
+    public void testTokenizeSimpleWhileLoopProgram() throws TokenizerException {
+        final Token[] tokens = Tokenizer.tokenize("(vardec int x 0) (while (< x 10) (= x (+ x 1)))");
+        final Token[] expected = new Token[] {
+            new LeftParenToken(),
+            new VardecToken(),
+            new IntToken(),
+            new IdentifierToken("x"),
+            new NumberToken(0),
+            new RightParenToken(),
+            new LeftParenToken(),
+            new WhileToken(),
+            new LeftParenToken(),
+            new LessThanToken(),
+            new IdentifierToken("x"),
+            new NumberToken(10),
+            new RightParenToken(),
+            new LeftParenToken(),
+            new SingleEqualsToken(),
+            new IdentifierToken("x"),
+            new LeftParenToken(),
+            new PlusToken(),
+            new IdentifierToken("x"),
+            new NumberToken(1),
+            new RightParenToken(),
+            new RightParenToken(),
+            new RightParenToken()
+        };
+        assertArrayEquals(tokens, expected);
+    }
+    
 }
