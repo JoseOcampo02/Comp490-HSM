@@ -43,15 +43,33 @@ interface Exp
 - class NumberLiteralExp
 - class BooleanLiteralExp
 - class VariableExp
-- class OpExp
+- class BinaryOperatorExp
 interface Stmt  
 - class VardecStmt
-- class LoopStmt
+- class WhileStmt
 - class AssignStmt
 interface Op  
 - class PlusOp: 2
 - class MinusOp: 3
 - class LogicalAndOp: 4
 - class LogicalOrOp: 5
-- class LessThanOp: 6
+- class LessThanOp: 6  
 class Program 
+
+# Types #
+- Vardec puts a variable in scope with a type  
+  - Need to remember the variable and the type  
+  - Need to ensure the expression is of the type  
+- num should be an int  
+- true and false should be bools  
+- var is whatever the type of the variable is  
+- while's expression is a boolean  
+- assign:  
+  - var should be in scope  
+  - var's type should match expression's type  
+- exp1 + exp2 => int, exp1: int, exp2: int  
+- exp1 - exp2 => int, exp1: int, exp2: int
+- exp1 && exp2 => bool, exp1: bool, exp2: bool
+- exp1 || exp2 => bool, exp1: bool, exp2: bool
+- exp1 < exp2 => bool, exp1: int, exp2: int
+- program: all statements are well typed

@@ -58,9 +58,7 @@ public class Parser {
                 stmts.add(stmt.result);
                 position = stmt.nextPosition;
             } catch (final ParseException e) {
-                e.getMessage();
                 shouldRun = false;
-                System.out.println("setting false");
             }
         }
         
